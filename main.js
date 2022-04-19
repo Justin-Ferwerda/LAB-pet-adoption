@@ -210,4 +210,18 @@ const pets = [
       imageUrl: "http://lsae2.iypcdn.com/static//modules/uploads/photos/language1/dino-live-22.jpg?119"
     }
   ];
-console.log("LAB-pet-adoption")
+
+const cards = document.querySelector(".cards")
+
+pets.forEach((memberobj) => {
+  
+  cards.innerHTML += `<div class="card" style="width: 18rem;">
+  <div class="header">${memberobj.name}</div>
+  <img src="${memberobj.imageUrl}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="pet-color">${memberobj.color}</p>
+    <p class="special-skill">${memberobj.specialSkill}</p>
+  </div>
+  <div class="footer">${memberobj.type}</div>
+  </div>`
+})
