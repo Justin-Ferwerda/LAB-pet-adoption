@@ -42,3 +42,24 @@ body {
   font-family: 'Josefin Sans', sans-serif;
   font-family: 'Orelega One', cursive;
 }
+
+#cat-btn {
+  background-color: yellow;
+  color: black;
+}
+
+#dog-btn {
+  background-color: blue;
+  color: white;
+}
+
+#dino-btn {
+  background-color: green;
+  color: black;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+}
