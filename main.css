@@ -4,15 +4,15 @@ body {
 .cards {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
-  
+  justify-content: space-evenly;
+ 
 }
 
 .header {
   display: flex;
   justify-content: center;
   font-weight: bold;
-  background-color: yellow;
+  background-color: lightgray;
   
 }
 
@@ -21,4 +21,24 @@ body {
   justify-content: center;
   font-weight: bold;
   background-color: lightblue;
+}
+
+.card-body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Orelega One', cursive;
+}
+
+.pet-color {
+  display: flex;
+  justify-content: center;
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Orelega One', cursive;
+  
+}
+
+.special-skill {
+  display: flex;
+  justify-content: center;
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Orelega One', cursive;
 }

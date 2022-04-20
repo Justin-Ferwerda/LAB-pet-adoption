@@ -219,8 +219,12 @@ pets.forEach((memberobj) => {
   <div class="header">${memberobj.name}</div>
   <img src="${memberobj.imageUrl}" class="card-img-top" alt="...">
   <div class="card-body">
-    <p class="pet-color">${memberobj.color}</p>
-    <p class="special-skill">${memberobj.specialSkill}</p>
+    <div class="pet-color">
+      <p>${memberobj.color}</p>
+    </div>  
+    <div class="special-skill">
+    <p>${memberobj.specialSkill}</p>
+    </div>  
   </div>
   <div class="footer">${memberobj.type}</div>
   </div>`
