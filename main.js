@@ -218,7 +218,7 @@ const renderToDom = (divId, textToRender) => {
 
 const renderCards = (array) => {
   let domString = "";
-  pets.forEach((memberobj) => {
+  array.forEach((memberobj) => {
   
     domString += `<div class="card" style="width: 18rem;">
     <div class="header">${memberobj.name}</div>
@@ -235,7 +235,7 @@ const renderCards = (array) => {
     </div>`
   })
 renderToDom(".cards", domString);
-}
+};
 
 const filter = (array, animalType) => {
   const animalArray = [];
@@ -245,26 +245,29 @@ const filter = (array, animalType) => {
     }
   });
   return animalArray;
-}
-
-
-const catArray = filter(pets, "cat")
-const dogArray = filter(pets, "dog")
-const dinoArray = filter(pets, "dino")
+  console.log("filter works")
+};
 
 const catCards = () => {
+  const catArray = filter(pets, "cat");
   renderCards(catArray)
-}
+};
 
 const dogCards = () => {
+  const dogArray = filter(pets, "dog");
   renderCards(dogArray)
-}
+};
 
 const dinoCards = () => {
+  const dinoArray = filter(pets, "dino");
   renderCards(dinoArray)
-}
-renderCards(pets)
+};
 
-document.querySelector("cat-btn").addEventListener("click", catCards )
-document.querySelector("dog-btn").addEventListener("click", dogCards )
-document.querySelector("dino-btn").addEventListener("click", dinoCards)
+const allCards = () => {
+  renderCards(pets)
+}
+
+document.querySelector("#cat-btn").addEventListener("click", catCards);
+document.querySelector("#dog-btn").addEventListener("click", dogCards);
+document.querySelector("#dino-btn").addEventListener("click", dinoCards);
+document.querySelector("#select-all").addEventListener("click", allCards)

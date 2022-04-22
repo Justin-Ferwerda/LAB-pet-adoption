@@ -63,3 +63,8 @@ body {
   justify-content: center;
   justify-content: space-evenly;
 }
+
+#select-all {
+  background-color: white;
+  color: purple;
+}
