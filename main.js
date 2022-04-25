@@ -237,37 +237,43 @@ const renderCards = (array) => {
 renderToDom(".cards", domString);
 };
 
-const filter = (array, animalType) => {
-  const animalArray = [];
-  array.forEach((obj) => {
-    if (obj.type === animalType) {
-      animalArray.push(obj);
+const buttons = () => {
+  const domString = `  
+  <div class="d-flex flex-wrap justify-content-between my-3">
+  <button class="btn btn-secondary btn-lg buttonRow" id="cat">Cats</button>
+  <button class="btn btn-secondary btn-lg buttonRow" id="dog">Dogs</button>
+  <button class="btn btn-secondary btn-lg buttonRow" id="dino">Dinos</button>
+  <button class="btn btn-secondary btn-lg buttonRow" id="select-all">Select All</button>
+  
+  </div>
+  `
+  renderToDom('#btn-container', domString)
+};
+
+const eventListeners = () => {
+  document.querySelector('#btn-container').addEventListener('click', (e) => {
+    if (e.target.id === 'select-all') {
+      renderCards(pets)
+    } else if (e.target.id) {
+      const petFilter = pets.filter(pet => pet.type === e.target.id)
+      renderCards(petFilter)
     }
+  
+    console.log("You clicked a filter button", e.target.id);
+  
   });
-  return animalArray;
-  //console.log("filter works")
-};
-
-const catCards = () => {
-  const catArray = filter(pets, "cat");
-  renderCards(catArray)
-};
-
-const dogCards = () => {
-  const dogArray = filter(pets, "dog");
-  renderCards(dogArray)
-};
-
-const dinoCards = () => {
-  const dinoArray = filter(pets, "dino");
-  renderCards(dinoArray)
-};
-
-const allCards = () => {
-  renderCards(pets)
 }
 
-document.querySelector("#cat-btn").addEventListener("click", catCards);
-document.querySelector("#dog-btn").addEventListener("click", dogCards);
-document.querySelector("#dino-btn").addEventListener("click", dinoCards);
-document.querySelector("#select-all").addEventListener("click", allCards)
+
+
+
+
+
+
+
+
+
+
+renderCards(pets)
+buttons()
+eventListeners()

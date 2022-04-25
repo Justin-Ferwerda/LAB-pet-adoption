@@ -43,26 +43,22 @@ body {
   font-family: 'Orelega One', cursive;
 }
 
-#cat-btn {
+#cat {
   background-color: yellow;
   color: black;
 }
 
-#dog-btn {
+#dog {
   background-color: blue;
   color: white;
 }
 
-#dino-btn {
+#dino {
   background-color: green;
   color: black;
 }
 
-.btn-container {
-  display: flex;
-  justify-content: center;
-  justify-content: space-evenly;
-}
+
 
 #select-all {
   background-color: white;
