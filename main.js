@@ -245,7 +245,7 @@ const filter = (array, animalType) => {
     }
   });
   return animalArray;
-  console.log("filter works")
+  //console.log("filter works")
 };
 
 const catCards = () => {
