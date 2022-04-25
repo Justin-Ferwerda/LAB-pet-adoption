@@ -259,8 +259,6 @@ const eventListeners = () => {
       renderCards(petFilter)
     }
   
-    console.log("You clicked a filter button", e.target.id);
-  
   });
 }
 
