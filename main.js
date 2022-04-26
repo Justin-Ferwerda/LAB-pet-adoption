@@ -252,7 +252,7 @@ const buttons = () => {
 
 
 
-const videoBtnModal = () => {
+const addPetModal = () => {
   const domString = `
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#create-pet">
@@ -285,13 +285,13 @@ const videoBtnModal = () => {
       
           <div class="form-floating mb-3">
             <select class="form-select form-control-lg" id="type" aria-label="type" required>
-              <option value="">Select a category</option>
+              <option value="">Select a type</option>
               <option value="cat">Cat</option>
               <option value="dog">Dog</option>
-              <option value="dino">Dinosaur</option>
+              <option value="dino">Dino</option>
               
             </select>
-            <label for="category">Category</label>
+            <label for="type">Type</label>
           </div>
 
           <div class="form-floating mb-3">
@@ -317,8 +317,11 @@ const videoBtnModal = () => {
 
 
 
+
+
 const eventListeners = () => {
   
+  const formModal = new bootstrap.Modal(document.querySelector('#create-pet'));
 
   document.querySelector('#btn-container').addEventListener('click', (e) => {
     if (e.target.id === 'select-all') {
@@ -329,12 +332,35 @@ const eventListeners = () => {
     }
   
   });
+
+
+  const form = document.querySelector('form');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const newPet = {
+      name: document.querySelector('#name').value,
+      color: document.querySelector('#color').value,
+      specialSkill: document.querySelector('#specialSkill').value,
+      type: document.querySelector('#type').value,
+      imageURL: document.querySelector('#imageURL').value
+    }
+
+    pets.push(newPet)
+    renderCards(pets)
+
+    formModal.hide()
+    form.reset()
+  })
+  
 }
 
 
 
 
-videoBtnModal()
+
+
+addPetModal()
 renderCards(pets)
 buttons()
 eventListeners()
