@@ -231,8 +231,15 @@ const renderCards = (array) => {
       <p>${memberobj.specialSkill}</p>
       </div>  
     </div>
-    <div class="footer">${memberobj.type}</div>
-    </div>`
+    <div class="footer">${memberobj.type}
+      <div>
+        <button class="btn btn-danger" id="delete--${memberobj.name}">X</button>
+      </div>
+    
+    </div>
+    
+    </div>
+    `
   })
 renderToDom(".cards", domString);
 };
@@ -351,6 +358,19 @@ const eventListeners = () => {
 
     formModal.hide()
     form.reset()
+  })
+
+  document.querySelector('.cards').addEventListener('click', (e) => {
+    if (e.target.id) {
+      const [method, name] = e.target.id.split('--')
+
+      const index = pets.findIndex(object => object.name === name)
+
+      if (e.target.id.includes('delete')) {
+        pets.splice(index, 1)
+        renderCards(pets)
+      }
+    }
   })
   
 }
