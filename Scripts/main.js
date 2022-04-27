@@ -5,7 +5,11 @@ import buttons from "./buttons.js";
 import addPetModal from "./addPetModal.js";
 import eventListeners from "./eventListeners.js";
 
-addPetModal()
-renderCards(pets)
-buttons()
-eventListeners()
+function startApp () {
+  addPetModal()
+  renderCards(pets)
+  buttons()
+  eventListeners()
+}
+
+startApp()
